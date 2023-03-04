@@ -3,11 +3,11 @@ import { Address } from '../entities/Address';
 
 import { AdressService } from '../services/AdressService';
 
-@Controller()
+@Controller('address')
 export class AddressController {
   constructor(private addressService: AdressService) {}
 
-  @Post('/add')
+  @Post()
   async createAddress(@Body() address: Address): Promise<Address> {
     try {
       return await this.addressService.createAdress(address);
@@ -16,7 +16,7 @@ export class AddressController {
     }
   }
 
-  @Get('/getall')
+  @Get()
   async getAllAddresses(): Promise<Address[]> {
     try {
       return await this.addressService.getAllAdress();

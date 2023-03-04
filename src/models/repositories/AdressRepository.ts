@@ -10,7 +10,7 @@ export class AdressRpository extends Repository <Address>{
   }
   async createAdress(adress: Address): Promise<Address> {
     try {
-      return this.create(adress);
+      return this.save(adress);
     }catch (error){
       throw error;
     }

@@ -11,7 +11,7 @@ export class AdressService{
   
   async createAdress(adress:Address):Promise<Address>{
     try {
-      return this.adressRepository.create(adress);
+      return this.adressRepository.createAdress(adress);
     }catch (error){
       throw error;
     }
